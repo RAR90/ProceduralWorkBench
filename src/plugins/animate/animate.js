@@ -1,0 +1,202 @@
+;(function($){
+    $.expr[":"].onScreen = function(elem){
+        var
+            $window = $(window),
+            viewport_top = $window.scrollTop(),
+            viewport_height = $window.height(),
+            viewport_bottom = viewport_top + viewport_height,
+            $elem = $(elem),
+            top = $elem.offset().top,
+            height = $elem.height(),
+            bottom = top + height
+        ;
+        return (top >= viewport_top && top < viewport_bottom) ||
+                (bottom > viewport_top && bottom <= viewport_bottom) ||
+                (height > viewport_height && top <= viewport_top && bottom >= viewport_bottom)
+    }
+})(jQuery);
+
+function createAnimation(obj){
+    $(obj.elm).css({'opacity':'0'});
+    setInterval(function(){
+        $(obj.elm+':onScreen')
+        .css({'opacity':'1'})
+        .addClass('animated')
+        .addClass(obj.anim)
+    }, 500);
+};
+
+$(document).ready(function($) {
+    createAnimation({
+        elm:'.bouncing',
+        anim:'bounce'
+    });
+    createAnimation({
+        elm:'.flashing',
+        anim:'flash'
+    });
+    createAnimation({
+        elm:'.pulsing',
+        anim:'pulse'
+    });
+    createAnimation({
+        elm:'.rubber-band',
+        anim:'rubberBand'
+    });
+    createAnimation({
+        elm:'.shaking',
+        anim:'shake'
+    });
+    createAnimation({
+        elm:'.head-shake',
+        anim:'headShake'
+    });
+    createAnimation({
+        elm:'.tadaa',
+        anim:'tada'
+    });
+    createAnimation({
+        elm:'.wobbling',
+        anim:'wobble'
+    });
+    createAnimation({
+        elm:'.jelloo',
+        anim:'jello'
+    });
+    createAnimation({
+        elm:'.bounce-in',
+        anim:'bounceIn'
+    });
+    createAnimation({
+        elm:'.bounce-in-down',
+        anim:'bounceInDown'
+    });
+    createAnimation({
+        elm:'.bounce-in-left',
+        anim:'bounceInLeft'
+    });
+    createAnimation({
+        elm:'.bounce-in-right',
+        anim:'bounceInRight'
+    });
+    createAnimation({
+        elm:'.bounce-in-up',
+        anim:'bounceInUp'
+    });
+    createAnimation({
+        elm:'.fade-in',
+        anim:'fadeIn'
+    });
+    createAnimation({
+        elm:'.fade-in-down',
+        anim:'fadeInDown'
+    });
+    createAnimation({
+        elm:'.fade-in-down-big',
+        anim:'fadeInDownBig'
+    });
+    createAnimation({
+        elm:'.fade-in-left',
+        anim:'fadeInLeft'
+    });
+    createAnimation({
+        elm:'.fade-in-left-big',
+        anim:'fadeInLeftBig'
+    });
+    createAnimation({
+        elm:'.fade-in-right',
+        anim:'fadeInRight'
+    });
+    createAnimation({
+        elm:'.fade-in-right-big',
+        anim:'fadeInRightBig'
+    });
+    createAnimation({
+        elm:'.fade-in-up',
+        anim:'fadeInUp'
+    });
+    createAnimation({
+        elm:'.fade-in-up-big',
+        anim:'fadeInUpBig'
+    });
+    createAnimation({
+        elm:'.flip-in-x',
+        anim:'flipInX'
+    });
+    createAnimation({
+        elm:'.flip-in-y',
+        anim:'flipInY'
+    });
+    createAnimation({
+        elm:'.light-speed-in',
+        anim:'lightSpeedIn'
+    });
+    createAnimation({
+        elm:'.rotate-in',
+        anim:'rotateIn'
+    });
+    createAnimation({
+        elm:'.rotate-in-down-left',
+        anim:'rotateInDownLeft'
+    });
+    createAnimation({
+        elm:'.rotate-in-down-right',
+        anim:'rotateInDownRight'
+    });
+    createAnimation({
+        elm:'.rotate-in-up-left',
+        anim:'rotateInUpLeft'
+    });
+    createAnimation({
+        elm:'.rotate-in-up-right',
+        anim:'rotateInUpRight'
+    });
+    createAnimation({
+        elm:'.hingening',
+        anim:'hinge'
+    });
+    createAnimation({
+        elm:'.roll-in',
+        anim:'rollIn'
+    });
+    createAnimation({
+        elm:'.roll-out',
+        anim:'rollOut'
+    });
+    createAnimation({
+        elm:'.zoom-in',
+        anim:'zoomIn'
+    });
+    createAnimation({
+        elm:'.zoom-in-down',
+        anim:'zoomInDown'
+    });
+    createAnimation({
+        elm:'.zoom-in-left',
+        anim:'zoomInLeft'
+    });
+    createAnimation({
+        elm:'.zoom-in-right',
+        anim:'zoomInRight'
+    });
+    createAnimation({
+        elm:'.zoom-in-up',
+        anim:'zoomInUp'
+    });
+    createAnimation({
+        elm:'.slide-in-down',
+        anim:'slideInDown'
+    });
+    createAnimation({
+        elm:'.slide-in-left',
+        anim:'slideInLeft'
+    });
+    createAnimation({
+        elm:'.slide-in-right',
+        anim:'slideInRight'
+    });
+    createAnimation({
+        elm:'.slide-in-up',
+        anim:'slideInUp'
+    });
+});

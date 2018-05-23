@@ -1,0 +1,20 @@
+#!/bin/bash
+
+PAGES="src/pages"
+PARTIALS="src/partials"
+
+if [ "$1" = "page" ]; then
+	mkdir $PAGES/$3
+	cp $PAGES/$2/$2.php $PAGES/$3/$3.php
+	cp $PAGES/$2/$2.js $PAGES/$3/$3.js
+	cp $PAGES/$2/$2.css $PAGES/$3/$3.css
+	rm -R $PAGES/$2
+fi
+
+if [ "$1" = "partial" ]; then
+	mkdir $PARTIALS/$3
+	cp $PARTIALS/$2/$2.php $PARTIALS/$3/$3.php
+	cp $PARTIALS/$2/$2.js $PARTIALS/$3/$3.js
+	cp $PARTIALS/$2/$2.css $PARTIALS/$3/$3.css
+	rm -R $PARTIALS/$2
+fi

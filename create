@@ -1,0 +1,80 @@
+#!/bin/bash
+
+PAGES="src/pages"
+PARTIALS="src/partials"
+
+if [ "$1" = "page" ]; then
+    mkdir $PAGES/$2
+    touch $PAGES/$2/$2.php
+    touch $PAGES/$2/$2.js
+    touch $PAGES/$2/$2.css
+
+echo '<div id="'$2'" class="'$2'">
+
+</div>
+<script>
+
+    $(document).ready(function () {
+        '$2'Page.init();
+    });
+
+</script>' >> $PAGES/$2/$2.php
+
+echo '/**
+* '$2'.php
+*/
+var '$2'Page = (function () {
+
+    var elm = $("#'$2'");
+
+    var start = function (assets) {
+        return null;
+    }
+
+    return {
+        init: function (assets) {
+            start(assets);
+        }
+    }
+
+})();' >> $PAGES/$2/$2.js
+
+echo '/* '$2'.php */' >> $PAGES/$2/$2.css
+
+fi
+
+if [ "$1" = "partial" ]; then
+    mkdir $PARTIALS/$2
+    touch $PARTIALS/$2/$2.php
+    touch $PARTIALS/$2/$2.js
+    touch $PARTIALS/$2/$2.css
+
+echo '<!-- begin '$2' -->
+<div id="'$2'" class="'$2'">
+
+</div>
+<!-- end '$2' -->
+' >> $PARTIALS/$2/$2.php
+
+echo '/**
+* '$2'.php
+*/
+var '$2'Partial = function () {
+
+    var elm = $("#'$2'");
+
+    var start = function (assets) {
+        return null;
+    }
+
+    return {
+        init: function (assets) {
+            start(assets);
+        }
+    }
+
+}' >> $PARTIALS/$2/$2.js
+
+echo '/* partial - '$2'.php */' >> $PARTIALS/$2/$2.css
+
+fi
