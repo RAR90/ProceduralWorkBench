@@ -1,6 +1,6 @@
-# Automate
+# Procedural WorkBench
 
-### Workflow automatization for php systems that uses gulp and bash scripts to generate distribution files based in php includes.
+### Workflow automatization for procedural php systems that uses gulp and bash scripts to generate distribution files based in php includes.
 #### Features
 1. Bootstrap & Jquery suport
 2. Font Awesome suport
@@ -15,7 +15,7 @@
 ## Install
 #### 1. Clone repository
 ``` bash
-$ git clone https://github.com/RafaelAntonioRibeiro/workflow
+$ git clone https://github.com/RafaelAntonioRibeiro/ProceduralWorkBench
 ```
 #### 2. Configure gulpfile.js
 **Change this line with your infos**
@@ -46,23 +46,23 @@ Replace `%content%` with one of command options and remove `%`.
 If you are running gulp, stop it before execute this commands then run gulp again.
 #### Create
 ``` bash
-$ ./create %page or partial% myPartial
+$ ./create %page or partial% my_partial
 ```
 #### Copy
 ``` bash
-$ ./copy %page or partial% original mycopy
+$ ./copy %page or partial% original my_copy
 ```
 #### Rename
 ``` bash
-$ ./rename %page or partial% originalName newName
+$ ./rename %page or partial% original_name new_name
 ```
 
 ## Recommendations
-1. Use CamelCase for pages and partials
-2. Use Revealing module pattern and handles in javascript modules
+1. Use Revealing module pattern and handles in javascript modules
+2. Use a Javascript lint (optional but...)
 3. Images and files belonging partials or pages and that will be call on document must be in your own folder and referenced in css file by these rules:
 ``` css
-{ background-image: url('../../imgs/image.png'); }
+{ background-image: url('../imgs/image.png'); }
 ```
 4. Images and files that will be call by sql queries or belonging a content of you project must be in src/files and referenced in document by these rules:
 ``` html
