@@ -34,7 +34,7 @@ var options = {
 #### 3. Install dependencies
 In project directory
 ``` bash
-$ npm install browser-sync gulp-notify gulp-concat gulp-uglify pump gulp-uglifycss gulp-css-format gulp-jsbeautify gulp-util vinyl-ftp gulp-flatten gulp-html-beautify gulp-strip-comments gulp
+$ npm install
 ```
 #### 4. Give scripts permissions
 In project directory
